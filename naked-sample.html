@@ -7,7 +7,7 @@
 
     <style type="text/css">
 /* Nothing is here, <style> tags aren't even needed */
-/* Paste CSS here to see it work */
+/* Copy-paste CSS here to see it work */
     </style>
 
   </head>
@@ -17,16 +17,40 @@
 
       <header>
         <h1>Ink is a verb. Ink.</h1>
-        <nav class="gray">
+        <nav class="gray" id="topnav">
           <ul>
             <li><a href="https://verb.ink">inkVerb</a></li>
             <li><a href="https://verb.vip">VIP Linux</a></li>
+            <li id="clickme" onclick="formDrop()">Click me: form</li>
           </ul>
         </nav>
       </header>
 
-      <aside class="white top">
-        <img src="inprogress.png" alt="Photo" height="150" width="150">
+      <aside class="ltgray top">
+        <!-- Keep divs from acting strangely, sometimes you need a div inside another div! -->
+        <div id="outer_dropform">
+          <!-- MUST be inside this tag, in CSS won't work! : style="display:none;" -->
+          <div id="dropForm" style="display:none;">
+            <form>
+              Name:<br>
+              <input type="text" name="full_name"><br><br>
+              Website:<br>
+              <input type="url" name="website"><br><br>
+              Email:<br>
+              <input type="email" name="email_addr"><br><br>
+              Password:<br>
+              <input type="password" name="pass"><br><br>
+              <input type="submit" value="Push">
+            </form>
+          </div>
+        </div>
+
+        <div class="logo">
+          <img src="nib.png" alt="Nib" height="128" width="128">
+        </div>
+        <div class="logo">
+          <img src="vip.png" alt="VIP">
+        </div>
       </aside>
       <div id="content">
         <article class="white">
@@ -41,7 +65,17 @@
         </article>
 
         <aside class="padmarg">
-          <pre>This is some code in the middle of an asside.</p>
+          <pre>This is some code in the middle of an asside.</pre>
+          <p>Here are some HTML entities:</p>
+          <ol>
+            <li>i              ii&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii</li>
+            <li>&lt;element&gt;</li>
+            <li>85&deg; = Taiwan</li>
+            <li>&para; Paragraph</li>
+            <li>en dash: &ndash;</li>
+            <li>em dash: &mdash;</li>
+            <li>21 A&spades; J&spades;</li>
+          </ol>
         </aside>
 
       </div>
@@ -51,6 +85,19 @@
       </footer>
 
     </div>
+
+    <!-- Our JavaScript for the "Click me" goes here -->
+    <script>
+      function formDrop() {
+        var x = document.getElementById("dropForm");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+      }
+    </script>
+
   </body>
 
 </html>

@@ -9,6 +9,65 @@ a {
 	font-weight: bold;
 }
 
+/* "Click me" is not a link, but it behaves like a link with this */
+li#clickme {
+	font-weight: bold;
+}
+li#clickme:hover {
+	cursor:pointer;
+	color: #bbb;
+	font-weight: bold;
+}
+
+/* Click me drop form */
+div#outer_dropform {
+	display: inline-block;
+	width: 100%;
+	float: right;
+}
+
+div#dropForm {
+	display: none;
+	position: absolute;
+	float: right;
+	width: 450px;
+	background-color: #fff;
+	padding: 10px;
+	border: solid;
+	border-radius: 0px;
+	border-width: 5px;
+	border-color:#777;
+}
+
+form input[type=submit] {
+	color: #fff;
+	background-color: #7cb931;
+	border-style: none;
+	border-radius: 4px;
+	padding: 10px 35px 10px 35px;
+	cursor: pointer;
+}
+form input[type=submit]:hover {
+	background-color: #83c830;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url] {
+	font-family:Verdana, Helvetica, sans-serif, Arial;
+	font-size:0.9em;
+	font-weight: normal;
+	font-style: normal;
+	width: 80%;
+	color: #222;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding:3px;
+}
+
+/* Other elements */
+
 code {
 	background-color: #ddd;
 }
@@ -37,7 +96,7 @@ nav.selected {
 	padding: 0px;
 }
 
-nav {
+nav#topnav {
 	display: block;
 }
 
@@ -54,9 +113,17 @@ nav ul li {
 	padding-left: 15px;
 }
 
+div.logo {
+	display: inline-block;
+}
+
 /* A few colors */
 .white {
 	background-color: #fff;
+}
+
+.ltgray {
+	background-color: #ddd;
 }
 
 .gray, nav.gray ul li a {
@@ -95,8 +162,8 @@ aside.padmarg {
 	border-width: 3px;
 	border-style: solid;
 	float: right;
-	margin: 70px;
-	padding: 70px;
+	margin: 15px 70px 15px 70px;
+	padding: 15px 70px 15px 70px;
 }
 
 article {

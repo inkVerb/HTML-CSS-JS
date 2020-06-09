@@ -1,6 +1,22 @@
 # HTML-CSS-JS
 
-## Render 'naked' HTML on a web page
+- Timeline:
+  - 1993: HTML
+  - 1994: PHP
+  - 1995: JavaScript
+  - 1996: CSS
+- "Client languages" (browser language)
+  - HTML
+  - CSS
+  - JavaScript
+- JavaScript makes a page "animated"
+- PHP is a "Server language" (works on the web server, browsers never know)
+- Illustration:
+  - HTML is a manikin
+  - CSS is the clothing
+  - JavaScript "animates", so the manikin moves like a robot and changes clothes
+
+## HTML
 
 ### HTML uses XML `<tags>`
 - Each has an open `<tag>` and close `</tag>`
@@ -24,12 +40,12 @@
 
 Just like this
 
- -->
+-->
 ```
 
 ### DOM (Document Object Model)
 - The basic "floor plan" of an HTML file is called the DOM
-- Basic HTML4 DOM:
+- Basic HTML DOM:
 ```html
 <!DOCTYPE html>
 <html>
@@ -43,27 +59,6 @@ Just like this
 </html>
 ```
 - Page content is in `<body>`
-
-- Basic HTML5 DOM:
-```html
-<!DOCTYPE html>
-<html>
-
-  <head>
-  </head>
-
-  <body>
-
-  <header>
-  </header>
-
-  <footer>
-  </footer>
-
-  </body>
-
-</html>
-```
 
 - `<head>` example:
 ```html
@@ -79,50 +74,51 @@ Just like this
 </head>
 ```
 
-- `<header>` example:
+- `<body>` example:
 ```html
-<header>
 
-  <nav>
-    <ul class="menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
+<body>
+  <!-- Very top of page -->
+  <header>
 
-</header>
-```
-- Main content example: (between `<header>` and `<footer>`)
-```html
-<div id="main">
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
 
-  <section>
-    <p>We like inking! <a href="http://verb.ink">Learn more</a></p>
-  </section>
+  </header>
+  <!-- Main content -->
+  <div id="main">
 
-  <article>
-    <h1>Post Title</h1>
-    <p>I am a long blog post.</p>
-    <p>I am another paragraph in the long blog post.</p>
-  </article>
+    <section>
+      <p>We like inking! <a href="http://verb.ink">Learn more</a></p>
+    </section>
 
-  <aside>
-    <p>Another great article to distract you! <a href="otherarticle.html">Read more...</a></p>
-  </aside>
+    <article>
+      <h1>Post Title</h1>
+      <p>I am a long blog post.</p>
+      <p>I am another paragraph in the long blog post.</p>
+    </article>
 
-</div>
-```
-- `<footer>` example:
-```html
-<footer>
+    <aside>
+      <p>Another great article to distract you! <a href="otherarticle.html">Read more...</a></p>
+    </aside>
 
-  <nav>
-    <ul class="menu">
-      <li><a href="terms.html">Terms & Privacy</a></li>
-    </ul>
-  </nav>
+  </div>
+  <!-- Very bottom of page -->
+  <footer>
 
-</footer>
+    <nav>
+      <ul class="menu">
+        <li><a href="terms.html">Terms & Privacy</a></li>
+      </ul>
+    </nav>
+
+  </footer>
+
+</body>
 ```
 
 ### Attributes & Values
@@ -154,13 +150,13 @@ Just like this
 
 ### Common Elements
 - Organizing:
+  - `<div>` (other, only this in HTML4)
   - `<header>` usually was: `<body><div class="header">`
   - `<footer>` usually was: `<body><div class="footer">`
   - `<nav>` (navigation menu)
   - `<section>` (large area)
   - `<article>` (one item)
   - `<aside>` (widget/ad area)
-  - `<div>` (other)
   - In HTML4, these were only `<div>`
 - Headers: `<h1>`, `<h2>`, ... `<h6>`
 - Paragraphs:
@@ -277,7 +273,7 @@ Here are some:
 
 Just like this
 
- */
+*/
 ```
 
 ### Format
@@ -394,6 +390,126 @@ p {
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 ```
 
-## Try yourself:
+## JavaScript
 
-`git clone https://github.com/inkVerb/HTML-CSS-JS`
+We will not dive deep into JavaScript
+
+This crash course only explains one way to use snippets of JavaScript in HTML
+
+### Comments
+```js
+// I am a comment
+
+/*
+# Comments may span multiple lines
+
+Just like this
+
+*/
+```
+
+### Use JavaScript with HTML
+
+1. The **affected** HTML element has an ID JavaScript "method" will recognize
+
+- This is based on ID, but there are many JavaScript "methods"
+  - `getElementById("some_id")`
+  - `getElementsByClassName("some_class")`
+  - `getElementsByName("some_name")`
+
+| **file.html** : *(Note `id="showMe"`)*
+
+```html
+<div id="showMe" style="display:none;">
+```
+
+2. The **activating** HTML element has an `onclick=` attribute with the JavaScript function as the `"value()"`
+
+- `onclick=` is called a JavaScript "event"
+- Other "events" can include:
+  - `onload=`
+  - `onmouseover=`
+  - `onmouseout=`
+  - `onkeydown=`
+  - `onchange=`
+
+
+| **file.html** : *(Note `onclick="jsFunction()"`)*
+
+```html
+<code onclick="jsFunction()">Click me and I will do something</code>
+```
+
+3. The JavaScript must be included in the `<script>` tag
+- Sometimes it must be in the `<head>`
+- Sometimes it must be in the `<body>` **after** the HTML it interacts with
+- JavaScript can be embedded:
+
+```html
+<script>
+  function jsFunction() {
+    // JS function code here
+  }
+</script>
+```
+
+- JavaScript can be included in an external file:
+
+```html
+<script src="scripts.js"></script>
+```
+
+Our specific Javascript in this example changes the `display:` style between `block` (show) and `none` (hide)
+
+### Full example:
+
+- Tip: Search for
+  - `jsFunction`
+  - `showMe`
+
+| **file.html** :
+```html
+<code onclick="jsFunction()">Click me and I will do something</code>
+
+<!-- Keep divs from acting strangely, sometimes you need a div inside another div! -->
+<!-- style= can be inline (like this) or in the CSS -->
+<div style="display: inline-block; width: 100%; float: right;">
+  <!-- MUST be inside this tag, in CSS won't work! : style="display:none;" -->
+  <div id="showMe" style="display:none;">
+    <p>
+      I am hiding and showing when you click "click me"
+    </p>
+  </div>
+</div>
+
+<script>
+  function jsFunction() {
+    var x = document.getElementById("showMe");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+```
+
+## Try:
+
+| **1** : `git clone https://github.com/inkVerb/HTML-CSS-JS`
+
+| **2** : `cd HTML-CSS-JS`
+
+| **3** : `gedit naked-sample.html styled-sample.html style.css script.js &`
+
+| **4** : `firefox naked-sample.html`
+
+*Use Ctrl + Shift + C in browser to see the developer view*
+
+| **5** : `firefox styled-sample.html`
+
+*Use Ctrl + Shift + C in browser to see the developer view*
+
+*Click: "Click me" then "Push"*
+
+*Note the new address in the web browser*
