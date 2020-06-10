@@ -133,22 +133,46 @@ Just like this
 </p>
 ```
 
-- **All elements can have attributes `id` and `class`**
-  - These are used by
-  - CSS
-  - JavaScript
+#### All elements can have attributes `id` and `class`
+- These are used by
+- CSS
+- JavaScript
 - Example:
-    - Element: `p`
-    - ID attribute: `id="top"` (must be unique or page will break!)
-    - Class attribute: `class="big"` (can be used many times)
+  - Element: `p`
+  - ID attribute: `id="top"` (must be unique or page will break!)
+  - Class attribute: `class="big"` (can be used many times)
 
   ```html
   <p id="top" class="big" style="color:red;">
 
   </p>
   ```
+#### Important attributes
+- `src=`: source
+  - This sources an external file
+  - Examples:
+```html
+    <script src="scripts.js"></script> <!-- JavaScript file -->
+    <img src="image.gif"> <!-- GIF image -->
+```
+- `href=`: hypertext reference (a location on the web)
+- `rel=`: relation (what it is used for)
+  - Examples:
+```html
+<link href="https://verb.ink/" rel="canonical"> <!-- this web address -->
+<link href="favicon.png" rel="shortcut icon" type="image/png"> <!-- favicon in browser -->
+<link href="css/styles.css" rel="stylesheet" type="text/css"> <!-- CSS file -->
+<a href="page.html"></a> <!-- relative web address -->
+<a href="https://verb.ink/page.html"></a> <!-- full web address -->
+```
 
 ### Common Elements
+- Metadata & Scripts:
+  - `<title>` (title in the web browser top bar or tab)
+  - `<meta>` (extra information in the page)
+  - `<link>` (files referred to in the page)
+  - `<style>` (contains CSS)
+  - `<script>` (contains JavaScript)
 - Organizing:
   - `<div>` (other, only this in HTML4)
   - `<header>` usually was: `<body><div class="header">`
@@ -189,6 +213,8 @@ Just like this
   - `<input>` `type=`:
     - `"text"`
     - `"password"`
+    - `"email"`
+    - `"url"`
     - `"radio"`
     - `"color"`
     - `"submit"`
@@ -196,6 +222,7 @@ Just like this
   - Image: `<img>`
   - Audio: `<audio>` (HTML5)
   - Video: `<video>` (HTML5)
+
 
 ### HTML entities
 *Most special characters need an HTML code called an "HTML entity"*
@@ -262,7 +289,7 @@ Here are some:
 - Understand HTML color codes - [RGB](https://www.youtube.com/watch?v=HX46ILgwTNk)
 - Color Theory - [Beginning Graphic Design: Color](https://www.youtube.com/watch?v=_2LLXnUdUIc)
 - Examples mixing colors - [RGB & CMYK](https://github.com/inkVerb/pictypes/blob/master/rgb-cmyk.md)
-- Different image types - [JPEG & PNG](https://github.com/inkVerb/pictypes/blob/master/jpg-png.md)
+- Different image types - [JPEG, PNG & GIF](https://github.com/inkVerb/pictypes/blob/master/jpg-png-gif.md)
 
 ### Comments
 ```css
