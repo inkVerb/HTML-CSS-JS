@@ -62,7 +62,7 @@ input[type=url] {
 	width: 80%;
 	color: #222;
 	border: 1px solid #ccc;
-	border-radius: 4px;
+	border-radius: 8px;
 	padding:3px;
 }
 
@@ -113,18 +113,32 @@ nav ul li {
 	padding-left: 15px;
 }
 
+aside#logos {
+	width: 460px;
+	height: 240px;
+}
+
 div.logo {
 	display: inline-block;
 }
 
-div#slogan {
+aside#slogan {
 	float: right;
-	margin: 5px 40px 15px 10px;
+	padding: 5px 20px 0px 10px;
 	background-color: #bbb;
+	width: 180px;
+	height: 235px;
 }
 
-div#slogan pre {
+aside#slogan pre {
 	font-size: 36pt;
+	line-height: 16pt;
+	text-align: center;
+}
+
+aside#slogan blockquote {
+	font-size: 12pt;
+	font-style: italic;
 }
 
 /* A few colors */
@@ -145,17 +159,21 @@ nav.gray ul li a:hover {
 	color: #bbb;
 }
 
-#container {
+div#container {
 	background-color: white;
 	width: 670px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#content {
+section#content {
 	padding: 10px;
 	margin: 10px;
 	height: 258px;
+}
+
+aside.top {
+	float: left;
 }
 
 aside.top img {
