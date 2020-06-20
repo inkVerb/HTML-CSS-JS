@@ -537,6 +537,8 @@ Our specific Javascript in this example changes the `display:` style between `bl
 
 *Use Ctrl + Shift + C in browser to see the developer view*
 
+*Note "`<pre>prePREpre</pre>`" gets cut and hangs below its `<div>` because of fixed sizes and margins*
+
 *Click: "Click me" then "Push"*
 
 *Note the new address in the web browser*

@@ -120,19 +120,27 @@ nav ul li {
 
 aside#logos {
 	width: 460px;
-	height: 200px;
+	height: 240px;
 }
 
 div.logo {
 	display: inline-block;
 }
 
+aside#headertags {
+	float: right;
+	padding: 5px 20px 0px 10px;
+	background-color: #ccc;
+	width: 120px;
+	height: 235px;
+}
+
 aside#slogan {
 	float: right;
 	padding: 5px 20px 0px 10px;
 	background-color: #bbb;
-	width: 180px;
-	height: 195px;
+	width: 150px;
+	height: 235px;
 }
 
 aside#slogan pre {
@@ -166,7 +174,7 @@ nav.gray ul li a:hover {
 
 div#container {
 	background-color: white;
-	width: 670px;
+	width: 790px;
 	margin-left: auto;
 	margin-right: auto;
 }
