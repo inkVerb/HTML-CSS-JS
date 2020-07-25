@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      @-webkit-keyframes fadeOut {
+        0% { opacity: 1;}
+        99% { opacity: 0.01;width: 100%; height: 100%;}
+        100% { opacity: 0;width: 0; height: 0;}
+      }
+      @keyframes fadeOut {
+        0% { opacity: 1;}
+        99% { opacity: 0.01;width: 100%; height: 100%;}
+        100% { opacity: 0;width: 0; height: 0;}
+      }
+      .hidenote {
+        -webkit-animation: fadeOut 8s;
+        animation: fadeOut 8s;
+        animation-fill-mode: forwards;
+      }
+    </style>
+  </head>
+<body>
+
+<!-- First: form hotkey and nav-away warning -->
+
+<br>
+<pre>Use Ctrl + S, or change the field then try to navigate away...</pre>
+<br>
+
+  <form method="get" onsubmit="offNavWarn();">
+    <input type="text" name="g" onchange="onNavWarn();" onkeyup="onNavWarn();">
+    <input type="submit" id="send_form" value="Send">
+  </form>
+
+  <script>
+
+    // Ctrl + S = submit Send
+    document.addEventListener("keydown", function(cs) {
+      if ( (window.navigator.platform.match("Mac") ? cs.metaKey : cs.ctrlKey) && (cs.keyCode == 83) ) {
+        cs.preventDefault(); // Stop it from doing what it normally does
+        document.getElementById('send_form').click();
+      }
+    }, false); // Ctrl + S capture
+
+    // Navigate away warning
+    function onNavWarn() {
+      window.onbeforeunload = function() {
+      return true;
+      };
+    }
+    function offNavWarn() {
+      window.onbeforeunload = null;
+    }
+
+  </script>
+
+<br><br>
+<hr>
+
+<!-- Second: alert and update DOM -->
+
+<br>
+<pre>Click and watch...</pre>
+<br>
+
+  <button type="button" onclick="showNote('changeme', 'New message');">Click me</button>
+
+  <span id="changeme">I am original text.</span>
+
+  <br><br>
+
+  <button type="button" onclick="showAlert();">Alert me</button>
+
+  <br><br>
+
+  <button type="button" onclick="hideShow();">Hide show</button>
+
+  <span id="hideme" style="display: inline;">I want to hide.</span>
+
+
+  <script>
+
+    // Show message
+    function showNote(elemID, jsNote) {
+      document.getElementById(elemID).innerHTML = '<span class="hidenote">'+jsNote+'</span>';
+    }
+
+    // Alert message
+    function showAlert() {
+      window.alert("Consider yourself alerted!");
+    }
+
+    // Hide show
+    function hideShow() {
+      var x = document.getElementById("hideme");
+      if (x.style.display === "inline") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "inline";
+        // document.getElementById("hideme").style.display = "inline"; // Same thing
+      }
+    }
+
+  </script>
+
+</body>
+</html>

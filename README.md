@@ -292,6 +292,8 @@ Here are some:
 - Different image types - [JPEG, PNG & GIF](https://github.com/inkVerb/pictypes/blob/master/jpg-png-gif.md)
 
 ### Comments
+
+| **CSS** :
 ```css
 /* I am a comment */
 
@@ -324,6 +326,8 @@ Just like this
   - Others, but we mainly use hexcode
 
 - Styling:
+
+| **CSS** :
 ```css
 /* Element */
 p {
@@ -367,7 +371,9 @@ p.big, p.small, div.big, a.big {
 
 ```
 
-| **Element `<p>`** : color, background, font, size
+- **Element `<p>`:** color, background, font, size
+
+| **CSS** :
 ```css
 p {
   color: #222;
@@ -377,8 +383,9 @@ p {
 }
 ```
 
-| **Style by element, class, or id** :
+- **Style by:** element, class, or id
 
+| **HTML** :
 ```html
 <p id="top" class="big">
 
@@ -393,6 +400,7 @@ p {
 </div>
 ```
 
+| **CSS** :
 ```css
 .top {
   color: #222;
@@ -405,7 +413,10 @@ p {
 *This can all be on one line, but this is the style of most CSS stylesheets*
 
 ### Style HTML with CSS
+
 - Embed CSS in the `<head>` between `<style>` tags
+
+| **HTML** :
 ```html
 <style>
   p { color: #222; font-size: 0.8em; }
@@ -413,17 +424,22 @@ p {
 ```
 
 - `<link>` CSS in the `<head>`
+
+| **HTML** :
 ```html
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 ```
 
 ## JavaScript
 
-We will not dive deep into JavaScript
+This crash course illustrates JavaScript
 
-This crash course only explains one way to use snippets of JavaScript in HTML
+- Changing HTML
+- Interacting with the browser
 
 ### Comments
+
+| **JavaScript** :
 ```js
 // I am a comment
 
@@ -462,7 +478,6 @@ Just like this
 
 
 | **file.html** : *(Note `onclick="jsFunction()"`)*
-
 ```html
 <code onclick="jsFunction()">Click me and I will do something</code>
 ```
@@ -472,6 +487,7 @@ Just like this
 - Sometimes it must be in the `<body>` **after** the HTML it interacts with
 - JavaScript can be embedded:
 
+| **HTML** :
 ```html
 <script>
   function jsFunction() {
@@ -482,6 +498,7 @@ Just like this
 
 - JavaScript can be included in an external file:
 
+| **HTML** :
 ```html
 <script src="scripts.js"></script>
 ```
@@ -521,19 +538,124 @@ Our specific Javascript in this example changes the `display:` style between `bl
 </script>
 ```
 
+### JavaScript Interaction
+
+Here are other examples of JavaScript interacting with the browser or changing HTML
+
+1. Change *Ctrl + S* to activate button with `id="send_form"`
+
+| **JavaScript** :
+```js
+document.addEventListener("keydown", function(cs) {
+  if ( (window.navigator.platform.match("Mac") ? cs.metaKey : cs.ctrlKey) && (cs.keyCode == 83) ) {
+    cs.preventDefault(); // Stop it from doing what it normally does
+    document.getElementById('send_form').click();
+  }
+}, false); // Ctrl + S capture
+```
+
+2. Warn if user attempts to navigate away from `<form>` after changes
+
+| **HTML** :
+```html
+<form method="get" onsubmit="offNavWarn();">
+  <input type="text" name="something" onchange="onNavWarn();" onkeyup="onNavWarn();">
+  <input type="submit" id="send_form" value="Send">
+</form>
+```
+
+| **JavaScript** :
+```js
+function onNavWarn() {
+  window.onbeforeunload = function() {
+  return true;
+  };
+}
+function offNavWarn() {
+  window.onbeforeunload = null;
+}
+```
+
+3. Update HTML to disappearing text with variables in the function
+
+| **CSS** :
+```css
+@-webkit-keyframes fadeOut {
+  0% { opacity: 1;}
+  99% { opacity: 0.01;width: 100%; height: 100%;}
+  100% { opacity: 0;width: 0; height: 0;}
+}
+@keyframes fadeOut {
+  0% { opacity: 1;}
+  99% { opacity: 0.01;width: 100%; height: 100%;}
+  100% { opacity: 0;width: 0; height: 0;}
+}
+.hidenote {
+  -webkit-animation: fadeOut 8s;
+  animation: fadeOut 8s;
+  animation-fill-mode: forwards;
+}
+```
+
+| **HTML** :
+```html
+<button type="button" onclick="hideShow();">Hide show</button>
+<span id="hideme" style="display: inline;">I want to hide.</span>
+```
+
+| **JavaScript** :
+```js
+function showNote(elemID, jsNote) {
+  document.getElementById(elemID).innerHTML = '<span class="hidenote">'+jsNote+'</span>';
+}
+```
+
+4. Send an alert to the browser
+
+| **HTML** :
+```html
+<button type="button" onclick="showAlert();">Alert me</button>
+```
+
+| **JavaScript** :
+```js
+function showAlert() {
+  window.alert("Consider yourself alerted!");
+}
+```
+
+5. Hide/show by changing `display:` to `inline`/`none`
+
+| **HTML** :
+```html
+<button type="button" onclick="hideShow();">Hide show</button>
+<span id="hideme" style="display: inline;">I want to hide.</span>
+```
+
+| **JavaScript** :
+```js
+function hideShow() {
+  if (document.getElementById("hideme").style.display === "inline") {
+    document.getElementById("hideme").style.display = "none";
+  } else {
+    document.getElementById("hideme").style.display = "inline";
+  }
+}
+```
+
 ## Try:
 
-| **1** : `git clone https://github.com/inkVerb/HTML-CSS-JS`
+| **1** :$ `git clone https://github.com/inkVerb/HTML-CSS-JS`
 
-| **2** : `cd HTML-CSS-JS`
+| **2** :$ `cd HTML-CSS-JS`
 
-| **3** : `gedit naked-sample.html styled-sample.html style.css script.js &`
+| **3** :$ `gedit naked-sample.html styled-sample.html style.css script.js &`
 
-| **4** : `firefox naked-sample.html`
+| **4** :$ `firefox naked-sample.html`
 
 *Use Ctrl + Shift + C in browser to see the developer view*
 
-| **5** : `firefox styled-sample.html`
+| **5** :$ `firefox styled-sample.html`
 
 *Use Ctrl + Shift + C in browser to see the developer view*
 
@@ -542,3 +664,21 @@ Our specific Javascript in this example changes the `display:` style between `bl
 *Click: "Click me" then "Push"*
 
 *Note the new address in the web browser*
+
+| **6** :$ `javascript.html`
+
+**First:** `<form>` hotkey and nav-away warning
+
+*Type in the empty field, then click the browser's "Reload" or "Back" button*
+
+*Note the message*
+
+*Press "Crtl + S" and/or click "Send"*
+
+*Note the `?g=...` in the browser, "Ctrl + S" does the same as clicking "Send"*
+
+**Second:** alert and update DOM
+
+*Click other buttons in the lower half of the page*
+
+*Note how the changes related between HTML and JavaScript*
