@@ -675,7 +675,7 @@ function hideShow() {
 
 *Press "Crtl + S" and/or click "Send"*
 
-*Note the `?g=...` in the browser, "Ctrl + S" does the same as clicking "Send"*
+*Note the `?g=...` in the browser address bar, "Ctrl + S" does the same as clicking "Send"*
 
 **Second:** alert and update DOM
 
