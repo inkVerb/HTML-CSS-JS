@@ -645,17 +645,38 @@ function hideShow() {
 
 ## Try:
 
-| **1** :$ `git clone https://github.com/inkVerb/HTML-CSS-JS`
+| **1** :$
 
-| **2** :$ `cd HTML-CSS-JS`
+```console
+git clone https://github.com/inkVerb/HTML-CSS-JS`
+```
 
-| **3** :$ `gedit naked-sample.html styled-sample.html style.css script.js &`
+| **2** :$
 
-| **4** :$ `firefox naked-sample.html`
+```console
+cd HTML-CSS-JS`
+```
+
+| **3** :$
+
+```console
+gedit naked-sample.html styled-sample.html style.css script.js &`
+```
+
+| **4** :$
+
+```console
+firefox naked-sample.html`
+```
 
 *Use Ctrl + Shift + C in browser to see the developer view*
 
-| **5** :$ `firefox styled-sample.html`
+| **5** :$
+
+```console
+firefox styled-sample.html`
+```
+
 
 *Use Ctrl + Shift + C in browser to see the developer view*
 
@@ -665,7 +686,10 @@ function hideShow() {
 
 *Note the new address in the web browser*
 
-| **6** :$ `javascript.html`
+| **6** :$
+
+```console
+javascript.html`
 
 **First:** `<form>` hotkey and nav-away warning
 
