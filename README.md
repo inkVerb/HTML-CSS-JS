@@ -5,6 +5,7 @@
   - 1994: PHP
   - 1995: JavaScript
   - 1996: CSS
+  - 1998: XML
 - "Client languages" (browser language)
   - HTML
   - CSS
@@ -15,14 +16,18 @@
   - HTML is a manikin
   - CSS is the clothing
   - JavaScript "animates", so the manikin moves like a robot and changes clothes
+- XML borrows HTML framework, using it to organize information the way HTML organizes a webpage
+  - XML can be displayed like a webpage or used silently for software to access information data
+  - XML is a transparent (visible, non-secure) alternative to SQL
+  - XML is used in news feeds, RSS, blog feed, podcasts, and settings files
 
 ## HTML
 
-### HTML uses XML `<tags>`
+### HTML uses `<tags>`
 - Each has an open `<tag>` and close `</tag>`
 - Some tags are self-closing
-  - XML: `<self-closing-tag />`
   - HTML: `<self-closing-tag>`
+  - XML: `<self-closing-tag />`
 - ***HTML tags are called "elements", not "tags"!***
 
 ### First line:
