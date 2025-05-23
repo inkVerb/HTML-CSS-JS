@@ -653,25 +653,25 @@ function hideShow() {
 | **1** :$
 
 ```console
-git clone https://github.com/inkVerb/HTML-CSS-JS`
+git clone https://github.com/inkVerb/HTML-CSS-JS
 ```
 
 | **2** :$
 
 ```console
-cd HTML-CSS-JS`
+cd HTML-CSS-JS
 ```
 
 | **3** :$
 
 ```console
-gedit naked-sample.html styled-sample.html style.css script.js &`
+gedit naked-sample.html styled-sample.html style.css scripts.js &
 ```
 
 | **4** :$
 
 ```console
-firefox naked-sample.html`
+firefox naked-sample.html
 ```
 
 *Use Ctrl + Shift + C in browser to see the developer view*
@@ -679,7 +679,7 @@ firefox naked-sample.html`
 | **5** :$
 
 ```console
-firefox styled-sample.html`
+firefox styled-sample.html
 ```
 
 
