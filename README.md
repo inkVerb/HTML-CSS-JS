@@ -694,7 +694,8 @@ firefox styled-sample.html
 | **6** :$
 
 ```console
-javascript.html`
+firefox javascript.html
+```
 
 **First:** `<form>` hotkey and nav-away warning
 
