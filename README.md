@@ -665,7 +665,7 @@ cd HTML-CSS-JS
 | **3** :$
 
 ```console
-gedit naked-sample.html styled-sample.html style.css scripts.js &
+gedit naked-sample.html styled-sample.html style.css scripts.js javascript.html &
 ```
 
 | **4** :$
