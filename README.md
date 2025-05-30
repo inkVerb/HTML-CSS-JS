@@ -1,5 +1,4 @@
 # HTML-CSS-JS
-
 - Timeline:
   - 1993: HTML
   - 1994: PHP
